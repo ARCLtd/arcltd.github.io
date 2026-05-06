@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARC Ltd — Platform Suite</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  height: 100%;
+  background: #0D0E12;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  color: white;
+}
+
+.page {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── LEFT PANEL ── */
+.left {
+  width: 42%;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 56px 52px;
+  border-right: 1px solid rgba(255,255,255,0.055);
+  overflow: hidden;
+}
+
+.left-bg-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.03);
+  pointer-events: none;
+}
+
+.left-bg-ring-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.04);
+  pointer-events: none;
+}
+
+.arc-logo {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 40px;
+}
+
+.left-meta {
+  position: relative;
+  z-index: 1;
+}
+
+.left-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.28);
+  margin-bottom: 10px;
+}
+
+.left-tagline {
+  font-size: 15px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.6;
+  max-width: 260px;
+}
+
+/* ── RIGHT PANEL ── */
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.platform-row {
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  height: 94px;
+  border-bottom: 1px solid rgba(255,255,255,0.055);
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+}
+
+.platform-row:last-child {
+  border-bottom: none;
+}
+
+.platform-row:hover {
+  background: rgba(255,255,255,0.025);
+}
+
+.platform-row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--c);
+  opacity: 0;
+  transition: opacity 0.15s;
+  border-radius: 0;
+}
+
+.platform-row:hover::before {
+  opacity: 1;
+}
+
+.mark-area {
+  width: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.wordmark-area {
+  flex: 1;
+  padding-left: 14px;
+}
+
+.wordmark {
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: -2.5px;
+  line-height: 1;
+  color: var(--c);
+}
+
+.meta-area {
+  text-align: right;
+  flex-shrink: 0;
+  min-width: 170px;
+}
+
+.platform-type {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 10px;
+}
+
+.platform-arrow {
+  font-size: 15px;
+  color: var(--c);
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ── LEFT ── -->
+  <div class="left">
+    <div class="left-bg-ring"></div>
+    <div class="left-bg-ring-2"></div>
+
+    <div class="arc-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="310" height="128" viewBox="0 0 193.341 80" aria-label="ARC Ltd">
+        <defs><clipPath id="cp"><rect width="193.341" height="80" fill="#fff"/></clipPath></defs>
+        <g clip-path="url(#cp)">
+          <path d="M51.24,29.761c-.614.858-1.137,1.05-1.536,1.852-.415.833.088.411-.558,1.2-.374.454-.428.282-.964.792a8.84,8.84,0,0,0-1.375,2.125c-.4,1.2.208,1.255-.193,2.977a1.957,1.957,0,0,0,.551,2.382c1.5,1.658.113.774,1.739,2.054,2.188,1.723,4.224-.185,5.574-.029.065.007,2.075.93,2.111,1.582.176,3.172.026,1.085,1.2,3.53,1.158,2.417.362,2.538,0,4.317C57.522,53.8,60.3,61.174,60.3,61.174c1.847.663,3.921-.728,4.714-1.712L66.97,56.17a12.743,12.743,0,0,0,.018-1.731c1.917-1.05,2.272-1.447,2.236-2.889-.039-1.56-.886-2.9.021-4.472.975-1.689,4.143-3.1,4.106-6.591l-2.857.543c-.742-1.751-1.887-2.267-2.711-4.281-.388-.946-.823-1.528-1.109-2.361-.436-1.268.173-1.066-.333-2.573a12.637,12.637,0,0,1-3.517-.3c-.694-.223-.655-.416-1.318-.32-.8.114-1,.7-1.2.864-2.045-.863-2.387-.9-2.7-1.781-.122-.339.1-.4-.21-1.058-2.319-.154-4.832,1.037-6.151.541" transform="translate(-23.272 -14.636)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M29.611,52.913c-1.534-.791-9.463-.737-16.648-7.962C3.405,35.339,2.7,19.272,11.4,9.228,15.447,4.549,19.3,2.193,26.839.015c-19.435-.655-33,20.713-24,38.449,5.135,10.12,15.279,15.31,26.769,14.448" transform="translate(0 0)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M124.043,46.427l1.076,7.93-5.091-.115ZM110.17,63.818l4.485.058,3.3-5.927,7.754-.023,1.158,5.957,4.534-.032-4.49-23.772-3.2-.019c-.729.2-12.579,21.674-13.538,23.759" transform="translate(-55.209 -20.075)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M158.632,45.124l-2.837.042-.468,3.333,2.843.01c-.758,6.985-1.961,14.4-6.838,18.955a5.987,5.987,0,0,0,2.618,2.746c5.671-3.311,7.771-15.249,8.45-21.686l3.5-.015,1.3-3.327-4.133-.068c.525-3.984,2.1-6,6.038-4.24l1.811-3.019c-7.188-3.188-11.288.441-12.279,7.27" transform="translate(-75.837 -18.384)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M30.412,50.265c-3.979-2.4-8.591-7.907-10.476-13.528a26.155,26.155,0,0,1,1.3-20.437A26.516,26.516,0,0,1,43.119,1.553c4.8-.386,6.766.725,10.652,1.259-5.544-3.6-15.191-3.4-21.57-.9A26.255,26.255,0,0,0,18.355,14.576C13.106,24.9,15.35,36.371,22.694,44.761c1.2,1.367,5.363,4.872,7.718,5.5" transform="translate(-7.76 -0.032)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M269.066,62.4a5.244,5.244,0,0,1-2.113,3.865c-4.156,2.953-6.1-1.528-2.875-3.172a11.418,11.418,0,0,1,4.988-.692m-7.676-8.3.412,3.164c3.026-.765,8.27-3.043,7.929,2.128-5.43.141-11.136.71-11.355,6.368-.107,2.756,1.308,4.483,3.8,4.844,3.4.494,4.671-1.616,6.342-2.558l.47,2.515,3.6-.73c-.454-6.844,2.747-10.606,1-14.14-2.14-4.341-7.991-2.557-12.2-1.591" transform="translate(-129.476 -26.511)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M300.993,56.307l.074-3.079-3.234.015-3.753,16.926,4.191.1c.971-2.372,1.195-6.118,2.193-8.838.69-1.881,3.46-6.28,5.981-4.465,1.433,1.192.023,4.792-.373,6.569-.379,1.7-1.347,5.2-1.308,6.724l4.161-.024c.737-2.532,2.986-12.154,2.537-14.422-.685-3.463-5.478-4.69-10.467.492" transform="translate(-147.371 -26.466)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M240.186,68.9l-.826-2.922c-1.738.525-3.935,1.779-6.088.743-3.224-1.553-2.879-7.871,1.2-9.915,2.443-1.224,4.444-.363,6.52.381l.778-3.434c-4.78-2.519-13.754-.4-14.856,7.716-.557,4.1,1.036,7.047,3.552,8.336,3.646,1.869,6.833.2,9.718-.905" transform="translate(-113.658 -26.437)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M188.718,56.169l.077-2.83-3.247,0L181.8,70.317l4.219.041c1.293-3.516,1.45-9.348,3.824-12.176,1.184-1.41,2.208-1.146,4.218-.745l1.817-3.785c-5.377-1.85-5.476.894-7.164,2.516" transform="translate(-91.107 -26.577)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M208.055,70.692c.914,0,2.024.067,2.905.035,1.429-.052,1.278-.07,1.579-1.521.706-3.392,3.169-13.624,3.275-15.529h-4.188c-.739,2.877-3.616,14.815-3.572,17.014" transform="translate(-104.262 -26.9)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M179.105,100.851c1.727-.019,1.857-.044,2.884.737.577,2.756-1.125,3.254-3.678,3.275Zm-4.8,11.08,2.421.013,1.154-5.214c2.89.16,1.949,4.859,3.9,5.229l2-.007-2.463-5.817c2.1-.538,4.371-2.643,3.075-5.458-1.033-2.245-4.423-1.988-7.3-1.869Z" transform="translate(-87.351 -49.478)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M289.453,107.872c4.293-.7,3.873,4.164,1.686,5.473a3.226,3.226,0,0,1-2.319.413c-.872-.278-.624-.466-.371-1.6.311-1.4.574-2.9,1-4.286m-2.141-1.58-3.06,13.95,2.424.013,1-4.622c2.3-.058,3.279.409,5.138-.906,3.887-2.748,3.944-10.772-5.5-8.435" transform="translate(-142.447 -53.055)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M220.72,110.987l2.3.016,1.26-3.718c.837.9,1.415,2.481,2.294,3.729l2.549-.016c-.608-1.567-2.168-3.575-2.974-5.07.923-1.04,3.955-3.348,4.5-4.369-4.68-.051-2.038.323-6.08,3.024l1.555-7.73-2.363.013Z" transform="translate(-110.609 -48.536)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M255.348,111.032l-.353-1.68c-1.7.5-3.473,1.185-5.11.02-3.041-2.163-1.89-10.727,6.8-8.173l.431-1.954c-5.352-1.926-10.134.81-11.153,5.279-1.472,6.459,4.154,9.336,9.386,6.507" transform="translate(-123.139 -49.421)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M363.1,118.384l-.8,1.644c4.536,1.517,6.539-1.84,8.036-4.875,1.459-2.959,3.314-5.946,4.563-8.832l-2.189-.077-3.419,6.638-1.585-6.6-2.188-.016c.3,5.253,3.295,8.488,1.138,11.039-1.041,1.231-1.538,1.266-3.553,1.085" transform="translate(-181.559 -53.241)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M269.609,113.606c-.563-2.249,1.223-2.466,3.434-2.482-.386,1.933-1.408,2.981-3.434,2.482m-.829-7.077.291,1.709c1.879-.488,4.36-1.588,4.35,1.195-3.094.165-5.97.37-6.255,3.31-.231,2.388,1.746,4.24,5.425,1.7.974,1.48.216,1.243,2.377.842.066-5.825,3.834-11.437-6.188-8.757" transform="translate(-133.875 -53.039)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M309.429,113.57c-.551-2.1,1.272-2.59,3.445-2.363-.361,1.847-1.419,2.982-3.445,2.363m-.834-7,.289,1.669c1.806-.52,4.139-1.5,4.38.936-1.517.877-5.645-.272-6.233,3.217-.68,4.034,3.636,3.536,5.323,2.05l.874,1.161,1.553-.343c.022-2.176,1.2-6.3.683-7.72-.9-2.471-4.8-1.727-6.869-.971" transform="translate(-153.826 -53.044)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M355.992,101.47c-.569,3.326-.2,1.454-2.115,2.357l-.309,1.449c.107.032.57.126.589.134l.9.457c-.3,1.4-1.287,4.841-.983,6.068.541,2.193,3.875,1.3,5.163.341l-.33-1.363c-1.274.068-.945.644-2.344.033a13.312,13.312,0,0,1,.564-3.771c.474-2.349.528-1.642,2.763-1.834l.538-1.685-2.521-.08.509-2.595Z" transform="translate(-177.183 -50.605)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M205.635,113.279a8.091,8.091,0,0,0-.539,1.789c2.289.89,5.977,1.317,6.8-1.311,1.066-3.4-3.319-3.17-2.866-5.743a4.893,4.893,0,0,1,3.277.3l.434-1.963c-6.313-1.337-7.079,1.968-5.786,3.955.065.1,6.865,5.342-1.319,2.968" transform="translate(-102.779 -53.143)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M333.269,114.836c-.192-2.662-.654-.944-2.66-.947-3,0-2.891-4.479-.483-5.668,1.836-.906,2.886.223,3.739-.087l.406-1.778c-12.233-2.55-9.528,14.157-1,8.48" transform="translate(-163.354 -53.164)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M218.014,37.9c-3.471,1.171-2.431,6.2,1.417,5.041,3.114-.941,2.24-6.275-1.417-5.041" transform="translate(-108.195 -18.902)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M342.55,115.71c2.762.028,2.235.8,3.161-3.623a35.2,35.2,0,0,0,1.1-5.814l-2.184.037Z" transform="translate(-171.662 -53.256)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M196.113,115.7l1.256.029,1.08-.023,2.081-9.385-2.264-.062Z" transform="translate(-98.278 -53.25)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M347.132,98.521c.009,1.232.194,2.053,1.646,1.862,1.267-.167,1.379-1.136,1.181-2.451-1.356-.745-1.828-.7-2.827.589" transform="translate(-173.958 -48.833)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M200.887,98.263c-.362,3.339,2.487,2.511,2.825,1.162.542-2.171-1.44-2.024-2.825-1.162" transform="translate(-100.654 -48.947)" fill="#fff" fill-rule="evenodd"/>
+          <path d="M177.057,152.224V144.38H178.1V151.3h3.863v.925Z" transform="translate(-88.728 -72.353)" fill="#fff"/>
+          <path d="M189.123,144.381h.963v1.107h-.963Zm0,2.162h.963v5.683h-.963Z" transform="translate(-94.775 -72.353)" fill="#fff"/>
+          <path d="M193.993,154.267v-5.683h.862v.8a2.022,2.022,0,0,1,.712-.671,2,2,0,0,1,1.011-.254,1.867,1.867,0,0,1,1.035.262,1.4,1.4,0,0,1,.57.733,2.041,2.041,0,0,1,1.756-1,1.731,1.731,0,0,1,1.3.468,2,2,0,0,1,.454,1.442v3.9h-.958v-3.58a2.643,2.643,0,0,0-.093-.832.809.809,0,0,0-.34-.409,1.062,1.062,0,0,0-.578-.155,1.345,1.345,0,0,0-1,.4,1.754,1.754,0,0,0-.4,1.276v3.3h-.963v-3.692a1.623,1.623,0,0,0-.235-.963.891.891,0,0,0-.771-.321,1.4,1.4,0,0,0-.751.214,1.213,1.213,0,0,0-.5.626,3.531,3.531,0,0,0-.155,1.188v2.948Z" transform="translate(-97.215 -74.396)" fill="#fff"/>
+          <path d="M212.3,144.381h.963v1.107H212.3Zm0,2.162h.963v5.683H212.3Z" transform="translate(-106.391 -72.353)" fill="#fff"/>
+          <path d="M218.742,151.541l.139.851a3.592,3.592,0,0,1-.728.086,1.644,1.644,0,0,1-.813-.166.929.929,0,0,1-.407-.436,3.45,3.45,0,0,1-.118-1.137v-3.269h-.706v-.749h.706v-1.407l.958-.578v1.986h.968v.749h-.968v3.322a1.7,1.7,0,0,0,.05.53.4.4,0,0,0,.166.188.644.644,0,0,0,.329.069,3.143,3.143,0,0,0,.423-.037" transform="translate(-108.298 -72.53)" fill="#fff"/>
+          <path d="M226.841,152.437l1,.123a2.427,2.427,0,0,1-.872,1.354,2.954,2.954,0,0,1-3.6-.286,3,3,0,0,1-.73-2.154,3.14,3.14,0,0,1,.738-2.225,2.5,2.5,0,0,1,1.916-.792,2.428,2.428,0,0,1,1.862.776,3.081,3.081,0,0,1,.722,2.183c0,.057,0,.143-.005.257h-4.237a2.181,2.181,0,0,0,.529,1.434,1.577,1.577,0,0,0,1.188.5,1.472,1.472,0,0,0,.9-.278,1.845,1.845,0,0,0,.594-.888m-3.162-1.557h3.173a1.924,1.924,0,0,0-.363-1.076,1.478,1.478,0,0,0-1.194-.556,1.531,1.531,0,0,0-1.115.443,1.759,1.759,0,0,0-.5,1.188" transform="translate(-111.566 -74.396)" fill="#fff"/>
+          <path d="M238.828,152.225v-.717a1.768,1.768,0,0,1-1.589.846,2.229,2.229,0,0,1-1.249-.375,2.465,2.465,0,0,1-.883-1.046,3.62,3.62,0,0,1-.313-1.544,4.043,4.043,0,0,1,.283-1.544,2.237,2.237,0,0,1,.851-1.062,2.277,2.277,0,0,1,1.268-.369,1.9,1.9,0,0,1,.915.217,1.916,1.916,0,0,1,.653.565v-2.815h.958v7.844Zm-3.045-2.836a2.467,2.467,0,0,0,.46,1.632,1.388,1.388,0,0,0,1.087.54,1.361,1.361,0,0,0,1.073-.516,2.379,2.379,0,0,0,.441-1.575,2.671,2.671,0,0,0-.45-1.712,1.38,1.38,0,0,0-1.107-.546,1.333,1.333,0,0,0-1.073.524,2.587,2.587,0,0,0-.431,1.653" transform="translate(-117.662 -72.353)" fill="#fff"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="left-meta">
+      <div class="left-eyebrow">Platform suite</div>
+      <div class="left-tagline">Seven platforms.<br>One continent.</div>
+    </div>
+  </div>
+
+  <!-- ── RIGHT ── -->
+  <div class="right">
+
+    <!-- Yako -->
+    <a class="platform-row" href="https://yako.arclimited.com" style="--c:#2251CC;">
+      <div class="mark-area">
+        <svg width="50" height="50" viewBox="0 0 64 64" fill="none" style="filter:drop-shadow(0 0 7px rgba(34,81,204,0.45));" role="img" aria-label="Yako">
+          <circle cx="32" cy="3"  r="2" fill="#2251CC"/>
+          <circle cx="61" cy="32" r="2" fill="#2251CC"/>
+          <circle cx="32" cy="61" r="2" fill="#2251CC"/>
+          <circle cx="3"  cy="32" r="2" fill="#2251CC"/>
+          <path d="M32 11 L53 32 L32 53 L11 32 Z" fill="none" stroke="#2251CC" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M32 23 L41 32 L32 41 L23 32 Z" fill="#2251CC"/>
+        </svg>
+      </div>
+      <div class="wordmark-area"><div class="wordmark">yako</div></div>
+      <div class="meta-area">
+        <div class="platform-type">Client portal</div>
+        <div class="platform-arrow">→</div>
+      </div>
+    </a>
+
+    <!-- Soko -->
+    <a class="platform-row" href="https://soko.arclimited.com" style="--c:#1D9E75;">
+      <div class="mark-area">
+        <svg width="50" height="50" viewBox="0 0 64 64" fill="none" style="filter:drop-shadow(0 0 7px rgba(29,158,117,0.45));" role="img" aria-label="Soko">
+          <path d="M10 46 Q32 8 54 46" fill="none" stroke="#1D9E75" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M17 46 Q32 18 47 46" fill="none" stroke="#1D9E75" stroke-width="1.4" stroke-linecap="round" opacity="0.5"/>
+          <circle cx="32" cy="50" r="3.5" fill="#1D9E75"/>
+        </svg>
+      </div>
+      <div class="wordmark-area"><div class="wordmark">soko</div></div>
+      <div class="meta-area">
+        <div class="platform-type">Business dev CRM</div>
+        <div class="platform-arrow">→</div>
+      </div>
+    </a>
+
+    <!-- Sawa -->
+    <a class="platform-row" href="https://sawa.arclimited.com" style="--c:#7B6FE8;">
+      <div class="mark-area">
+        <svg width="50" height="50" viewBox="0 0 60 60" fill="none" style="filter:drop-shadow(0 0 7px rgba(123,111,232,0.45));" role="img" aria-label="Sawa">
+          <path d="M8 36 L8 16 L28 16" stroke="#7B6FE8" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M52 34 L52 54 L32 54" stroke="#7B6FE8" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+          <path d="M20 40 L28 50 L48 26" stroke="#A29BFE" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="wordmark-area"><div class="wordmark">sawa</div></div>
+      <div class="meta-area">
+        <div class="platform-type">Audit &amp; compliance</div>
+        <div class="platform-arrow">→</div>
+      </div>
+    </a>
+
+    <!-- Jara -->
+    <a class="platform-row" href="https://jara.arclimited.com" style="--c:#D4A843;">
+      <div class="mark-area">
+        <svg width="50" height="50" viewBox="0 0 60 60" fill="none" style="filter:drop-shadow(0 0 7px rgba(212,168,67,0.45));" role="img" aria-label="Jara">
+          <g transform="translate(30,30)" fill="#D4A843">
+            <path d="M 0 -3 Q 3.5 -13 0 -25 Q -3.5 -13 0 -3 Z"/>
+            <path d="M 0 -3 Q 3.5 -13 0 -25 Q -3.5 -13 0 -3 Z" transform="rotate(90)"/>
+            <path d="M 0 -3 Q 3.5 -13 0 -25 Q -3.5 -13 0 -3 Z" transform="rotate(180)"/>
+            <path d="M 0 -3 Q 3.5 -13 0 -25 Q -3.5 -13 0 -3 Z" transform="rotate(270)"/>
+            <path d="M 0 -2.5 Q 3 -11 0 -21 Q -3 -11 0 -2.5 Z" opacity="0.5" transform="rotate(45)"/>
+            <path d="M 0 -2.5 Q 3 -11 0 -21 Q -3 -11 0 -2.5 Z" opacity="0.5" transform="rotate(135)"/>
+            <path d="M 0 -2.5 Q 3 -11 0 -21 Q -3 -11 0 -2.5 Z" opacity="0.5" transform="rotate(225)"/>
+            <path d="M 0 -2.5 Q 3 -11 0 -21 Q -3 -11 0 -2.5 Z" opacity="0.5" transform="rotate(315)"/>
+            <circle r="3.5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="wordmark-area"><div class="wordmark">jara</div></div>
+      <div class="meta-area">
+        <div class="platform-type">Grant management</div>
+        <div class="platform-arrow">→</div>
+      </div>
+    </a>
+
+    <!-- Wari -->
+    <a class="platform-row" href="https://wari.arclimited.com" style="--c:#C0527A;">
+      <div class="mark-area">
+        <svg width="50" height="44" viewBox="0 0 70 60" fill="none" style="filter:drop-shadow(0 0 7px rgba(192,82,122,0.45));" role="img" aria-label="Wari">
+          <path d="M4 56 Q4 16 35 10 Q66 16 66 56" fill="none" stroke="#C0527A" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 56 Q12 26 35 20 Q58 26 58 56" fill="none" stroke="#C0527A" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/>
+          <path d="M20 56 Q20 34 35 28 Q50 34 50 56" fill="none" stroke="#C0527A" stroke-width="0.9" stroke-linecap="round" opacity="0.25"/>
+          <circle cx="4"  cy="56" r="3" fill="#C0527A"/>
+          <circle cx="66" cy="56" r="3" fill="#C0527A"/>
+        </svg>
+      </div>
+      <div class="wordmark-area"><div class="wordmark">wari</div></div>
+      <div class="meta-area">
+        <div class="platform-type">Underwriting &amp; risk</div>
+        <div class="platform-arrow">→</div>
+      </div>
+    </a>
+
+    <!-- Konjo -->
+    <a class="platform-row" href="https://konjo.arclimited.com" style="--c:#C1440E;">
+      <div class="mark-area">
+        <svg width="50" height="50" viewBox="0 0 110 110" fill="none" style="filter:drop-shadow(0 0 7px rgba(193,68,14,0.45));" role="img" aria-label="Konjo">
+          <circle cx="55" cy="55" r="10" fill="#C1440E"/>
+          <path d="M55 16 Q67 30 55 42 Q43 30 55 16Z" fill="#C1440E" opacity="0.85"/>
+          <path d="M55 94 Q43 80 55 68 Q67 80 55 94Z" fill="#C1440E" opacity="0.85"/>
+          <path d="M16 55 Q30 43 42 55 Q30 67 16 55Z" fill="#C1440E" opacity="0.85"/>
+          <path d="M94 55 Q80 67 68 55 Q80 43 94 55Z" fill="#C1440E" opacity="0.85"/>
+          <path d="M22 22 Q36 34 32 46 Q20 42 22 22Z" fill="#C1440E" opacity="0.42"/>
+          <path d="M88 22 Q74 34 78 46 Q90 42 88 22Z" fill="#C1440E" opacity="0.42"/>
+          <path d="M22 88 Q36 76 32 64 Q20 68 22 88Z" fill="#C1440E" opacity="0.42"/>
+          <path d="M88 88 Q74 76 78 64 Q90 68 88 88Z" fill="#C1440E" opacity="0.42"/>
+        </svg>
+      </div>
+      <div class="wordmark-area"><div class="wordmark">konjo</div></div>
+      <div class="meta-area">
+        <div class="platform-type">HR &amp; performance</div>
+        <div class="platform-arrow">→</div>
+      </div>
+    </a>
+
+    <!-- Yebo -->
+    <a class="platform-row" href="https://yebo.arclimited.com" style="--c:#0D9E90;">
+      <div class="mark-area">
+        <svg width="44" height="50" viewBox="0 0 60 65" fill="none" style="filter:drop-shadow(0 0 7px rgba(13,158,144,0.45));" role="img" aria-label="Yebo">
+          <path d="M6 22 Q6 10 14 10 L40 10 Q48 10 48 18 L48 32 Q48 40 40 40 L32 40 L28 50 L26 40 Q14 40 14 32 L14 28" fill="none" stroke="#0D9E90" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14 28 Q6 28 6 36 L6 48 Q6 56 14 56 L18 56 L21 64 L24 56 L42 56 Q50 56 50 48 L50 42" fill="none" stroke="#0D9E90" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="wordmark-area"><div class="wordmark">yebo</div></div>
+      <div class="meta-area">
+        <div class="platform-type">Communication</div>
+        <div class="platform-arrow">→</div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+</body>
+</html>
