@@ -176,6 +176,112 @@ html, body {
   font-size: 15px;
   color: var(--c);
 }
+
+/* ── MOBILE (iPhone) ── */
+@media (max-width: 720px) {
+  .page {
+    flex-direction: column;
+  }
+
+  .left {
+    width: 100%;
+    position: relative;
+    top: auto;
+    height: auto;
+    min-height: 0;
+    padding: 44px 28px 36px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.055);
+  }
+
+  .left-bg-ring {
+    width: 300px;
+    height: 300px;
+  }
+
+  .left-bg-ring-2 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .arc-logo {
+    margin-bottom: 22px;
+  }
+
+  .arc-logo svg {
+    width: 230px;
+    height: auto;
+  }
+
+  .left-tagline {
+    max-width: none;
+    font-size: 14px;
+  }
+
+  .right {
+    grid-template-columns: 1fr;
+    align-content: stretch;
+    min-height: 0;
+  }
+
+  .platform-row {
+    height: 68px;
+    padding: 0 20px;
+  }
+
+  .platform-row:nth-child(odd) {
+    border-right: none;
+  }
+
+  .platform-row:nth-last-child(-n+2) {
+    border-bottom: 1px solid rgba(255,255,255,0.055);
+  }
+
+  .platform-row:last-child {
+    border-bottom: none;
+  }
+
+  .mark-area {
+    width: 38px;
+  }
+
+  .wordmark {
+    font-size: 28px;
+    letter-spacing: -1.2px;
+  }
+
+  .meta-area {
+    min-width: 0;
+  }
+
+  .platform-type {
+    font-size: 10px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+  }
+
+  .platform-arrow {
+    font-size: 14px;
+  }
+}
+
+@media (hover: none) {
+  .platform-row:hover {
+    background: transparent;
+  }
+  .platform-row:hover::before {
+    opacity: 0;
+  }
+  .platform-row:active {
+    background: rgba(255,255,255,0.04);
+  }
+  .platform-row:active::before {
+    opacity: 1;
+  }
+}
 </style>
 </head>
 <body>
